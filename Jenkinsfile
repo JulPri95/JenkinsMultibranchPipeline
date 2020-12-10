@@ -10,12 +10,12 @@ pipeline {
 					}			
 				}			
 			stage('Second') {				
-            				steps {	
-						//echo "Step Two"	
-						//echo "Updating Second Stage"
-						script {
-							echo ${EXECUTE}
-						}
+            			steps {	
+					//echo "Step Two"	
+					//echo "Updating Second Stage"
+					script {
+						echo ${EXECUTE}
+					}
 					}		
 				} 			
 			stage('Third') {				
