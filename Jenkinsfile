@@ -3,7 +3,7 @@ pipeline {
 		stages {			
 			stage('First') {				
 				steps {	
-					//echo "Step One"	
+					echo "Step One"	
 					script{
 						env.EXECUTE="True"
 					}
@@ -11,8 +11,8 @@ pipeline {
 				}			
 			stage('Second') {				
             			steps {	
-					//echo "Step Two"	
-					//echo "Updating Second Stage"
+					echo "Step Two"	
+					echo "Updating Second Stage"
 					script {
 						echo "${EXECUTE}"
 					}
