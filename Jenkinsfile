@@ -9,13 +9,17 @@ pipeline {
 					}
 					}			
 				}			
-			stage('Second') {				
+			stage('Second') {	
+				when {
+               			 // Only say hello if a "greeting" is requested
+                			expression { params.EXECUTE == 'True' }
+          			  }
             			steps {	
 					echo "Step Two"	
 					echo "Updating Second Stage"
-					script {
-						echo "${EXECUTE}"
-					}
+					//script {
+					//	echo "${EXECUTE}"
+					//}
 					}		
 				} 			
 			stage('Third') {				
