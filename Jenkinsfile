@@ -11,20 +11,19 @@ pipeline {
 				}			
 			stage('Second') {	
 				when {
-               			 // Only say hello if a "greeting" is requested
                 			expression { EXECUTE == 'True' }
           			  }
             			steps {	
 					echo "Step Two"	
 					echo "Updating Second Stage"
-					//script {
-					//	echo "${EXECUTE}"
-					//}
 					}		
 				} 			
-			stage('Third') {				
+			stage('Third') {
+				when {
+                			expression { EXECUTE == 'False' }
+          			  }
 				steps {											
-						echo "Step Three"				
+					echo "Step Three"				
 					}			
 				}		
 			}
