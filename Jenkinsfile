@@ -12,7 +12,7 @@ pipeline {
 			stage('Second') {	
 				when {
                			 // Only say hello if a "greeting" is requested
-                			expression { params.EXECUTE == 'True' }
+                			expression { EXECUTE == 'True' }
           			  }
             			steps {	
 					echo "Step Two"	
